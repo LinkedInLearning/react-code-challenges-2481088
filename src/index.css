@@ -1,8 +1,34 @@
-.color-square {
-  font-family: sans-serif;
-  width: 300px;
-  display: inline-block;
+.page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode {
+  background-color: #171717;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  outline: none;
+}
+
+.dark-mode-button {
+  border: 2px solid white;
   color: white;
-  padding: 40px;
-  margin: 10px;
+  background-color: #171717;
+}
+
+.light-mode-button {
+  border: 2px solid #171717;
+  color: #171717;
+  background-color: white;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
 }
