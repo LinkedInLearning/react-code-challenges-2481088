@@ -10,8 +10,8 @@ export default function DogPics () {
   const [dogPic, setDogPic] = useState('')
 
   useEffect(() => {
-    const getDog = async () => setDogPic(await getDogPic())
-    getDog()
+    const apiRequest = async () => setDogPic(await getDogPic())
+    apiRequest()
   }, [])
 
   return (
