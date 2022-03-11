@@ -1,10 +1,10 @@
 import './App.css'
-import ScoreKeeper from './05-score-keeper/ScoreKeeper'
+import Timer from './06-timer/Timer'
 
 function App () {
   return (
     <div className='App'>
-      <ScoreKeeper />
+      <Timer />
     </div>
   )
 }
