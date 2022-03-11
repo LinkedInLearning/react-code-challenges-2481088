@@ -18,7 +18,7 @@ button {
   padding: 10px;
   margin: 5px;
   outline: none;
-  border: none;
+  border: 2px solid white;
 }
 
 .dark-mode-button {
