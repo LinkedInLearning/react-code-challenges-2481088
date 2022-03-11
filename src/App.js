@@ -1,10 +1,10 @@
 import './App.css'
-import Timer from './06-timer/Timer'
+import ColorPicker from './07-color-picker/ColorPicker'
 
 function App () {
   return (
     <div className='App'>
-      <Timer />
+      <ColorPicker />
     </div>
   )
 }
