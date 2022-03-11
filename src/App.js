@@ -1,10 +1,10 @@
 import './App.css'
-import DadJokes from './04-dog-pics/DogPics'
+import ScoreKeeper from './05-score-keeper/ScoreKeeper'
 
 function App () {
   return (
     <div className='App'>
-      <DadJokes />
+      <ScoreKeeper />
     </div>
   )
 }
