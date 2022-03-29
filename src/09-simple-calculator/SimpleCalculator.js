@@ -3,31 +3,23 @@ const initialState = {}
 function reducer (state, action) {}
 
 export default function SimpleCalculator () {
+  const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
   return (
     <div>
       <div>
         <h2>Number 1</h2>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
+        {numbers.map(number => (
+          <button key={number}>
+            {number}
+          </button>))}
       </div>
       <div>
         <h2>Number 2</h2>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
+        {numbers.map(number => (
+          <button key={number}>
+            {number}
+          </button>))}
       </div>
       <div>
         <h2>Actions</h2>
