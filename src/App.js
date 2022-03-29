@@ -1,10 +1,10 @@
 import './App.css'
-import PixelArt from './08-pixel-art/PixelArt'
+import SimpleCalculator from './09-simple-calculator/SimpleCalculator'
 
 function App () {
   return (
     <div className='App'>
-      <PixelArt />
+      <SimpleCalculator/>
     </div>
   )
 }
