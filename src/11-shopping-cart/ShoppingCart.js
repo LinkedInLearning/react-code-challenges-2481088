@@ -11,7 +11,7 @@ const items = [{
   price: 3.99
 }]
 
-function App () {
+function ShoppingCart () {
   const cart = [{ name: 'apple', quantity: 3, price: 0.39 }]
 
   return (
@@ -50,4 +50,4 @@ function App () {
   )
 }
 
-export default App
+export default ShoppingCart
