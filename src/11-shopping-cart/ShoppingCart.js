@@ -68,14 +68,14 @@ function App () {
                   {item.quantity}
                   <button onClick={() => increase(item.name)}>+</button>
                 </p>
-                <p>Subtotal: ${Math.round(item.quantity * item.price * 100) / 100}</p>
+                <p>Subtotal: ${(item.quantity * item.price).toFixed(2)}</p>
               </div>
               ))
             : <p>Add an item to your cart</p>}
         </div>
       </div>
       <div className='total'>
-        <h2>Total: ${cart.reduce((acc, i) => acc + (i.quantity * i.price), 0)}</h2>
+        <h2>Total: ${cart.reduce((acc, i) => acc + (i.quantity * i.price), 0).toFixed(2)}</h2>
       </div>
     </div>
   )
