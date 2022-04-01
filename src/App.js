@@ -1,10 +1,8 @@
-import './App.css'
-import FocusInput from './10-focus-input/FocusInput'
-
+import ShoppingCart from './11-shopping-cart/ShoppingCart'
 function App () {
   return (
     <div className='App'>
-      <FocusInput />
+      <ShoppingCart />
     </div>
   )
 }
