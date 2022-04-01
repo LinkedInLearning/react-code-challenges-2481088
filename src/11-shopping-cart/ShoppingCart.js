@@ -11,7 +11,7 @@ const items = [{
   price: 3.99
 }]
 
-function App () {
+function ShoppingCart () {
   const [cart, setCart] = useState([])
 
   const addToCart = (item) => {
@@ -81,4 +81,4 @@ function App () {
   )
 }
 
-export default App
+export default ShoppingCart
