@@ -1,10 +1,10 @@
 import './App.css'
-import Timer from './06-timer/Timer'
+import ToggleWindowEvent from './06-add-window-event/toggle-window-event'
 
 function App () {
   return (
     <div className='App'>
-      <Timer />
+      <ToggleWindowEvent>
     </div>
   )
 }
