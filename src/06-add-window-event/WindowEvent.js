@@ -1,5 +1,5 @@
 export default function WindowEvent () {
   return (
-    <div />
+    <h2>Window event active</h2>
   )
 }

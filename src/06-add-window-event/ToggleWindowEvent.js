@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import WindowEvent from './window-event'
+import WindowEvent from './WindowEvent'
 
 export default function ToggleWindowEvent () {
   const [windowEvent, setWindowEvent] = useState(false)

@@ -1,5 +1,5 @@
 import './App.css'
-import ToggleWindowEvent from './06-add-window-event/toggle-window-event'
+import ToggleWindowEvent from './06-add-window-event/ToggleWindowEvent'
 
 function App () {
   return (
