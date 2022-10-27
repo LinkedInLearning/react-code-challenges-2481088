@@ -1,33 +1,48 @@
-const initialState = {}
-
-function reducer (state, action) {}
+import { useReducer } from "react";
+import { calculatorReducer, initialState } from "./CalculatorReducer";
 
 export default function SimpleCalculator () {
-  const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', '0', ''];
+  const methods = ['+', '-', '/', '*'];
+
+  const [state, dispatch] = useReducer(calculatorReducer, initialState);
+
+  const handleNumberClick = number => {
+    const { displayNumber, target } = state;
+    dispatch({ type: target, value: displayNumber + number })
+  };
+
+  const handleClearClick = () => {
+    dispatch({ type: "CLEAR" })
+  }
+
+  const handleMethodClick = method => {
+    // After clicking method, switch target to second number.
+    dispatch({ type: "METHOD", value: method, target: "NUMBER_TWO"})
+  }
+
+  const handleCalcClick = () => {
+    dispatch({ type: "CACLULATE", target: "NUMBER_ONE" })
+  }
 
   return (
-    <div>
-      <div>
-        <h2>Number 1</h2>
+    <div id="calculator">
+      <div className="display">
+        {state.displayNumber}
+      </div>
+      <div className="numberPad">
         {numbers.map(number => (
-          <button key={number}>
+          <button key={number} onClick={() => handleNumberClick(number)} value={number}>
             {number}
           </button>))}
       </div>
-      <div>
-        <h2>Number 2</h2>
-        {numbers.map(number => (
-          <button key={number}>
-            {number}
-          </button>))}
+      <div className="methods">
+        {methods.map(method => (
+          <button key={method} value={method} onClick={() => handleMethodClick(method)}>{method}</button>
+        ))}
+        <button key="calc" onClick={() => handleCalcClick()}>=</button>
+        <button key="reset" onClick={() => handleClearClick()}>CLEAR</button>
       </div>
-      <div>
-        <h2>Actions</h2>
-        <button>+</button>
-        <button>-</button>
-        <button>c</button>
-      </div>
-      <div><h2>Result:</h2></div>
     </div>
   )
 }
