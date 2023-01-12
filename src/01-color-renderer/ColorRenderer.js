@@ -18,11 +18,11 @@ const colors = [{
 }]
 
 export default function ColorRenderer () {
-  return colors.map(color =>
+  return colors.map((color, index) =>
     <Color
       name={color.name}
       hex={color.hex}
-      key={color.hex}
+      key={index}
     />
   )
 }
