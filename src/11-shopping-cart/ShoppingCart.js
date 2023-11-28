@@ -12,7 +12,38 @@ const items = [{
 }]
 
 function ShoppingCart () {
-  const cart = [{ name: 'apple', quantity: 3, price: 0.39 }]
+  const [cart, setCart] = useState([])
+
+  function addToCart(item) {
+    const itemIndex = cart.findIndex((cartItem) => cartItem.name === item.name);
+    if (itemIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[itemIndex].quantity++;
+      setCart(updatedCart);
+    } else {
+      setCart([
+        ...cart,
+        {
+          name: item.name,
+          quantity: 1,
+          price: item.price,
+        },
+      ]);
+    }
+  }
+
+  function removeFromCart(item) {
+    const itemIndex = cart.findIndex((cartItem) => cartItem.name === item.name);
+    if (itemIndex !== -1) {
+      const updatedCart = [...cart];
+      if (updatedCart[itemIndex].quantity > 1) {
+        updatedCart[itemIndex].quantity--;
+      } else {
+        updatedCart.splice(itemIndex, 1);
+      }
+      setCart(updatedCart);
+    }
+  }
 
   return (
     <div>
@@ -24,7 +55,7 @@ function ShoppingCart () {
             <div key={item.name}>
               <h3>{item.name}</h3>
               <p>${item.price}</p>
-              <button>Add to Cart</button>
+              <button onClick={()=>{addToCart(item)}}>Add to Cart</button>
             </div>)
           )}
         </div>
@@ -34,9 +65,17 @@ function ShoppingCart () {
             <div key={item.name}>
               <h3>{item.name}</h3>
               <p>
-                <button>-</button>
+                <button
+                  onClick={() => {
+                    removeFromCart(item)
+                  }}
+                >-</button>
                 {item.quantity}
-                <button>+</button>
+                <button 
+                  onClick={() => {
+                    addToCart(item)
+                  }}
+                >+</button>
               </p>
               <p>Subtotal: ${item.quantity * item.price}</p>
             </div>
@@ -44,7 +83,9 @@ function ShoppingCart () {
         </div>
       </div>
       <div className='total'>
-        <h2>Total: $0.00</h2>
+        <h2>Total:           
+          {cart.reduce((total, item) => total + item.quantity * item.price, 0).toFixed(2)}
+        </h2>
       </div>
     </div>
   )
