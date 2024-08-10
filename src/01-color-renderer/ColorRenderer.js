@@ -19,9 +19,8 @@ const colors = [{
 
 export default function ColorRenderer () {
   return (
-    <h2>
-      Use the Color component to render each
-       item in the colors array on the page!
-    </h2>
+    <div>
+      {(colors instanceof Array && colors.length > 0) && colors.map((color) => <Color key={color.name} name={color.name} hex={color.hex} />)}
+    </div>
   )
 }
