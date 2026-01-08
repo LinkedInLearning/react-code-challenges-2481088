@@ -2,7 +2,7 @@
 This is the repository for the LinkedIn Learning course React.js Code Challenges. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![React.js Code Challenges][lil-thumbnail-url] 
-
+dd
 You think you know React, but how deep does your knowledge really go? In this installment of Code Challenges, instructor Ali Spittel provides several challenges to help you practice your React skills to see how much you’ve learned and how much you still need to know when working with this JavaScript library. Every challenge is self-contained and can be solved using React—no need for any other libraries—and you can jump around and complete them in any order you want. In each video, Ali provides her solution—one of several possible solutions—so you can compare to see how yours stacks up.
 
 ## Instructions
